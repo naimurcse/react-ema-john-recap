@@ -17,8 +17,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
 
 const Product = (props) => {
-    const { img, name, price, quantity, ratings, seller, shipping } = props.product;
-    console.log(props.product);
+    const {id, img, name, price, quantity, ratings, seller, shipping } = props.product;
+    
+    const handleAddToCart = props.handleAddToCart;
+    // console.log(handleAddToCart);
     return (
         <div className='product'>
             <div className="product__image">
@@ -32,13 +34,14 @@ const Product = (props) => {
                 <p>Rating: {ratings}</p>
             </div>
 
-            <button className="btn btn-add-to-cart">Add to Cart <FontAwesomeIcon icon={faCartShopping} /> </button>
+            <button className="btn btn-add-to-cart" onClick={()=>handleAddToCart(id)}>Add to Cart <FontAwesomeIcon icon={faCartShopping} /> </button>
         </div>
     );
 };
 
 Product.propTypes = {
   product: PropTypes.object.isRequired, // Adjust the prop type as needed
+  handleAddToCart: PropTypes.func.isRequired, // Adjust the prop type as needed
 };
 
 export default Product;
