@@ -1,8 +1,6 @@
 import PropTypes from 'prop-types';
 
-const Cart = (props) => {
-    
-    
+const Cart = (props) => {  
 
     let totalPrice = 0;
     let totalQuantity = 0;
@@ -11,7 +9,7 @@ const Cart = (props) => {
         let productPrice = product.price;
         totalPrice += productPrice * product.quantity;
         totalQuantity += product.quantity;
-        totalShipping += product.shipping;
+        totalShipping += product.shipping * product.quantity;
     }
 
     const tax = totalPrice * 15 / 100;
@@ -20,10 +18,10 @@ const Cart = (props) => {
         <div>
             <h3 className="shop__order-title">Order Summary</h3>
             <p>Selected Items: {totalQuantity}</p>
-            <p>Total Price: {totalPrice}</p>
-            <p>Total Shipping Charge: {totalShipping}</p>
-            <p>Tax: {tax}</p>
-            <h5 className="shop__grand-total">Grand Total: {grandTotal}</h5>
+            <p>Total Price: ${totalPrice}</p>
+            <p>Shipping Charge: ${totalShipping}</p>
+            <p>Tax: ${tax.toFixed(2)}</p>
+            <h5 className="shop__grand-total">Grand Total: ${grandTotal.toFixed(2)}</h5>
         </div>
     );
 };
