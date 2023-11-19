@@ -1,0 +1,32 @@
+.header {
+   background-color: var(--color-primary);
+   padding: 1.5rem 14rem;
+}
+
+.header__nav {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.header__menu {
+   list-style-type: none;
+}
+
+.header__menu li {
+   display: inline;
+}
+.header__menu li:not(:last-child) {
+   margin-right: 2rem;
+}
+.header__menu li a {
+   text-decoration: none;
+   color: var(--color-white);
+   display: inline-block;
+
+   transition: all 0.3s;
+}
+
+.header__menu li a:hover {
+   color: var(--color-secondary);
+}

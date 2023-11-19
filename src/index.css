@@ -1,0 +1,30 @@
+/* Import google font */
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap");
+
+/* Variables */
+:root {
+   --color-primary: #1c2b35;
+   --color-secondary: #ff9900;
+   --color-white: #fff;
+}
+
+/* Reset with universal selector */
+*,
+*::after,
+*::before {
+   margin: 0;
+   padding: 0;
+   box-sizing: inherit;
+}
+
+html {
+   font-size: 10px;
+}
+
+body {
+   font-family: "Lato", sans-serif;
+   font-weight: 400;
+   font-size: 1.8rem;
+   line-height: 1.7;
+   box-sizing: border-box;
+}
