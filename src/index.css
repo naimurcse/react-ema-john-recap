@@ -7,8 +7,12 @@
    --color-secondary: #ffe0b3;
 
    --color-white: #fff;
+   --color-light-grey: rgb(221, 221, 221);
    --color-grey: #404040;
-   --color-dark-grey: #333;
+   --color-heading: #0e161a;
+
+   --color-btn-add-to-cart: #ff9900;
+   --color-btn-add-to-cart-hover: #ff7700;
 }
 
 /* Reset with universal selector */
@@ -38,5 +42,5 @@ h3,
 h4,
 h5,
 h6 {
-   color: var(--color-dark-grey);
+   color: var(--color-heading);
 }

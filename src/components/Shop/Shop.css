@@ -1,6 +1,6 @@
 .shop {
    display: grid;
-   grid-template-columns: 3fr 1fr;
+   grid-template-columns: 4fr 1fr;
 }
 
 .shop__products {
@@ -24,4 +24,10 @@
    margin-top: 2rem;
    font-weight: 700;
    font-size: 1.8rem;
+}
+
+.shop__products {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 2.5rem;
 }
