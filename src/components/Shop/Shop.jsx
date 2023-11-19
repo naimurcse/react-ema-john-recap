@@ -2,19 +2,38 @@ import { useState } from "react";
 import Product from "../Product/Product";
 import "./Shop.css";
 import { useEffect } from "react";
+import { getShoppingCart,addProductsToDatabase } from "../../utilities/fake";
+import Cart from "../Cart/Cart";
 
 const Shop = () => {
 
     const [products,setProducts] = useState([])
+    const [cart, setCart] = useState([]);
+
     useEffect(() => {
         fetch("products.json")
             .then(res => res.json())
             .then(data => setProducts(data));
     },[])
 
-    const handleAddToCart = (id) => {
-        console.log(id);
+
+    const handleAddToCart = (product) => {
+        let newCart = [];
+        const exist = cart.find(pd => pd.id === product.id);
+        if (exist) {
+            exist.quantity = exist.quantity + 1;
+            const remainingProduct = cart.filter(pd => pd.id !== product.id);
+            newCart = [...remainingProduct, exist];
+        } else {
+            product.quantity = 1;
+            newCart = [...cart, product]
+        }
+        setCart(newCart);
     }
+
+    console.log(cart);
+    
+
 
     return (
         <section className="shop">
@@ -23,15 +42,10 @@ const Shop = () => {
                 {
                     products.map(product => <Product key={product.id} product={product} handleAddToCart={handleAddToCart}></Product>)
                 }
-                
+
             </div>
             <div className="shop__order-summary">
-                <h3 className="shop__order-title">Order Summary</h3>
-                <p>Selected Items: 6</p>
-                <p>Total Price: $1140</p>
-                <p>Total Shipping Charge: $5</p>
-                <p>Tax: $114</p>
-                <h5 className="shop__grand-total">Grand Total: $1559</h5>
+                <Cart cart={cart}></Cart>
             </div>
         </section>
     );
