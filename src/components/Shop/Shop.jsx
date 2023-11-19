@@ -1,9 +1,25 @@
+import { useState } from "react";
+import Product from "../Product/Product";
 import "./Shop.css";
+import { useEffect } from "react";
+
 const Shop = () => {
+
+    const [products,setProducts] = useState([])
+    useEffect(() => {
+        fetch("products.json")
+            .then(res => res.json())
+            .then(data => setProducts(data));
+    },[])
+
+
     return (
         <section className="shop">
             <div className="shop__products">
-                <h1>PRODUCT</h1>
+            
+                {
+                    products.map(product => <Product key={product.id} product={product}></Product>)
+                }
             </div>
             <div className="shop__order-summary">
                 <h3 className="shop__order-title">Order Summary</h3>
