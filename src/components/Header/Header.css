@@ -28,5 +28,5 @@
 }
 
 .header__menu li a:hover {
-   color: var(--color-secondary);
+   color: var(--color-btn-add-to-cart);
 }

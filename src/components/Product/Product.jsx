@@ -13,6 +13,8 @@
 
 import PropTypes from 'prop-types';
 import "./Product.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
 
 const Product = (props) => {
     const { img, name, price, quantity, ratings, seller, shipping } = props.product;
@@ -30,7 +32,7 @@ const Product = (props) => {
                 <p>Rating: {ratings}</p>
             </div>
 
-            <button className="btn btn-add-to-cart">Add to Cart</button>
+            <button className="btn btn-add-to-cart">Add to Cart <FontAwesomeIcon icon={faCartShopping} /> </button>
         </div>
     );
 };
