@@ -4,8 +4,11 @@
 /* Variables */
 :root {
    --color-primary: #1c2b35;
-   --color-secondary: #ff9900;
+   --color-secondary: #ffe0b3;
+
    --color-white: #fff;
+   --color-grey: #404040;
+   --color-dark-grey: #333;
 }
 
 /* Reset with universal selector */
@@ -27,4 +30,13 @@ body {
    font-size: 1.8rem;
    line-height: 1.7;
    box-sizing: border-box;
+   color: var(--color-grey);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   color: var(--color-dark-grey);
 }
