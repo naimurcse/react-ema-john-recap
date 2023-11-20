@@ -1,33 +1,16 @@
-import PropTypes from 'prop-types';
+import React from 'react';
 
-const Cart = (props) => {  
-
-    let totalPrice = 0;
-    let totalQuantity = 0;
-    let totalShipping = 0;
-    for (const product of props.cart) {
-        let productPrice = product.price;
-        totalPrice += productPrice * product.quantity;
-        totalQuantity += product.quantity;
-        totalShipping += product.shipping * product.quantity;
-    }
-
-    const tax = totalPrice * 15 / 100;
-    const grandTotal = totalPrice + tax + totalShipping;
+const Cart = () => {
     return (
         <div>
             <h3 className="shop__order-title">Order Summary</h3>
-            <p>Selected Items: {totalQuantity}</p>
-            <p>Total Price: ${totalPrice}</p>
-            <p>Shipping Charge: ${totalShipping}</p>
-            <p>Tax: ${tax.toFixed(2)}</p>
-            <h5 className="shop__grand-total">Grand Total: ${grandTotal.toFixed(2)}</h5>
+            <p>Selected Items: </p>
+            <p>Total Price: </p>
+            <p>Shipping Charge: </p>
+            <p>Tax: </p>
+            <h5 className="shop__grand-total">Grand Total: </h5>
         </div>
     );
-};
-
-Cart.propTypes = {
-  cart: PropTypes.array.isRequired, // Adjust the prop type as needed
 };
 
 export default Cart;
