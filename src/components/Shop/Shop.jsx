@@ -2,6 +2,7 @@ import Product from "../Product/Product";
 import Cart from "../Cart/Cart";
 import "./Shop.css";
 import { useDeferredValue, useEffect, useState } from "react";
+import { addToDb } from "../../utilities/fake";
 
 const Shop = () => {
 
@@ -30,10 +31,8 @@ const Shop = () => {
 
         // let newCart = [...cart, product];
         setCart(newCart);
+        addToDb(product.id);
 
-        // console.log(product);
-        // console.log(savedProduct);
-        console.log(newCart);
     }
 
     return (
@@ -48,7 +47,7 @@ const Shop = () => {
                 <div className="shop__order-summary">
                     <Cart cart={cart}></Cart>
                     {
-                        console.log(cart, cart.length)
+                        // console.log(cart, cart.length)
                     }
                 </div>
             </section>
