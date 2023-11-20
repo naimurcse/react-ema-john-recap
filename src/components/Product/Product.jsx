@@ -7,8 +7,11 @@ import PropTypes from 'prop-types';
 
 
 const Product = (props) => {
-    console.log(props.product);
-    const {img,name,price,seller,ratings} = props.product;
+    // console.log(props.product);
+    const { img, name, price, seller, ratings } = props.product;
+    
+    const handleAddToCart = props.handleAddToCart;
+
     return (
         <div className='product'>
             <div className="product__image">
@@ -22,13 +25,14 @@ const Product = (props) => {
                 <p>Rating: {ratings}</p>
             </div>
 
-            <button className="btn btn-add-to-cart" >Add to Cart <FontAwesomeIcon icon={faCartShopping} /> </button>
+            <button className="btn btn-add-to-cart" onClick={()=>handleAddToCart(props.product)}>Add to Cart <FontAwesomeIcon icon={faCartShopping} /> </button>
         </div>
     );
 };
 
 Product.propTypes = {
   product: PropTypes.object.isRequired, // adjust the prop type based on your actual requirements
+  handleAddToCart: PropTypes.func.isRequired, // adjust the prop type based on your actual requirements
 };
 
 export default Product;
