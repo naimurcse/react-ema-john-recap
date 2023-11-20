@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import "./Cart.css";
 const Cart = (props) => {
 
     let totalQuantity = 0;
@@ -15,7 +16,7 @@ const Cart = (props) => {
     const grandTotal = totalPrice + totalShipping + totalTax;
 
     return (
-        <div>
+        <div className='shop__cart'>
             <h3 className="shop__order-title">Order Summary</h3>
             <p>Selected Items: {props.cart.length}</p>
             <p>Total Quantity: {totalQuantity}</p>

@@ -2,7 +2,7 @@ import Product from "../Product/Product";
 import Cart from "../Cart/Cart";
 import "./Shop.css";
 import { useDeferredValue, useEffect, useState } from "react";
-import { addToDb } from "../../utilities/fake";
+import { addToDb, getShoppingCartFromDb } from "../../utilities/fake";
 
 const Shop = () => {
 
@@ -13,7 +13,28 @@ const Shop = () => {
         fetch("products.json")
             .then(res => res.json())
             .then(data => setProducts(data))
-    },[])
+    }, [])
+    
+    useEffect(() => {
+        const storedCart = getShoppingCartFromDb();
+        const savedCart = [];
+        
+        for (const id in storedCart) {
+            console.log(id);
+            console.log(storedCart[id]);
+            let addedProduct = products.find(pd => pd.id === id);
+            if (addedProduct) {
+                let quantity = storedCart[id];
+                addedProduct.quantity = quantity;
+                savedCart.push(addedProduct);
+            }
+            
+            // let quantity = 
+            
+        }
+        setCart(savedCart);
+        
+    },[products])
 
     const handleAddToCart = (product) => {
         // console.log(product);
