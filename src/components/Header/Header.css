@@ -13,13 +13,13 @@
    list-style-type: none;
 }
 
-.header__menu li {
-   display: inline;
+.header__menu a {
+   display: inline-block;
 }
-.header__menu li:not(:last-child) {
+.header__menu a:not(:last-child) {
    margin-right: 2rem;
 }
-.header__menu li a {
+.header__menu a {
    text-decoration: none;
    color: var(--color-white);
    display: inline-block;
@@ -27,6 +27,6 @@
    transition: all 0.3s;
 }
 
-.header__menu li a:hover {
+.header__menu a:hover {
    color: var(--color-btn-add-to-cart);
 }
