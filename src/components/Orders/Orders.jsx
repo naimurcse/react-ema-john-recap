@@ -10,15 +10,16 @@ const Orders = () => {
    console.log(cart);
    return (
       <div className="container order-cols">
-         <div className="">
-            <p>List: {cart.length}</p>
+         <div className="order-items">
+            <h3>Total Items: {cart.length}</h3>
             {cart.map((product) => (
                <ReviewItem key={product.id} product={product}></ReviewItem>
             ))}
          </div>
-         <div className="">
-            <h2>Order Summary</h2>
-            <Cart cart={cart}></Cart>
+         <div>
+            <div className="order-cart">
+               <Cart cart={cart}></Cart>
+            </div>
          </div>
       </div>
    );
