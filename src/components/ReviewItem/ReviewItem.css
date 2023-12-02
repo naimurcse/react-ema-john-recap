@@ -41,4 +41,14 @@
    display: flex;
    justify-content: center;
    align-items: center;
+
+   font-size: 2rem;
+   color: #eb5757;
+   background-color: #eb57574d;
+   transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+   background-color: #eb575796;
+   color: white;
 }
