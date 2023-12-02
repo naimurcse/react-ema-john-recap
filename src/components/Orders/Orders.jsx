@@ -6,12 +6,15 @@ import { useLoaderData } from "react-router-dom";
 import ReviewItem from "../ReviewItem/ReviewItem";
 
 const Orders = () => {
-   const cart = useLoaderData();
-   console.log(cart);
+   const loadedCart = useLoaderData();
+   // console.log(loadedCart);
+   const [cart, setCart] = useState(loadedCart);
 
    const removeItemHandler = (id) => {
+      let remainProducts = cart.filter((product) => product.id !== id);
+      setCart(remainProducts);
+      console.log(remainProducts);
       removeItemFromDb(id);
-      console.log(id);
    };
 
    return (
