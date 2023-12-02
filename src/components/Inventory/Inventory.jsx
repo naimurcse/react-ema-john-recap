@@ -2,7 +2,7 @@ import "./Inventory.css";
 
 const Inventory = () => {
    return (
-      <div>
+      <div className="container">
          <h2>Inventory</h2>
       </div>
    );

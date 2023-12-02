@@ -1,7 +1,13 @@
+import "./Order.css";
 const Orders = () => {
    return (
-      <div>
-         <h2>orders</h2>
+      <div className="container order-cols">
+         <div className="">
+            <p>List</p>
+         </div>
+         <div className="">
+            <h2>Order Summary</h2>
+         </div>
       </div>
    );
 };
