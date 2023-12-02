@@ -8,12 +8,21 @@ import ReviewItem from "../ReviewItem/ReviewItem";
 const Orders = () => {
    const cart = useLoaderData();
    console.log(cart);
+
+   const removeItemHandler = (id) => {
+      console.log(id);
+   };
+
    return (
       <div className="container order-cols">
          <div className="order-items">
             <h3>Total Items: {cart.length}</h3>
             {cart.map((product) => (
-               <ReviewItem key={product.id} product={product}></ReviewItem>
+               <ReviewItem
+                  key={product.id}
+                  product={product}
+                  removeItemHandler={removeItemHandler}
+               ></ReviewItem>
             ))}
          </div>
          <div>
