@@ -3,30 +3,18 @@ import { getShoppingCartFromDb } from "../../utilities/fake";
 import Cart from "../Cart/Cart";
 import "./Order.css";
 import { useLoaderData } from "react-router-dom";
+
 const Orders = () => {
-   const savedCart = getShoppingCartFromDb();
-   console.log(savedCart);
-   const [cart, setCart] = useState([]);
-
-   const products = useLoaderData();
-   const savedProduct = [];
-   for (const id in savedCart) {
-      let addedProduct = products.find((product) => product.id === id);
-      if (addedProduct) {
-         addedProduct.quantity = savedCart[id];
-         savedProduct.push(addedProduct);
-      }
-   }
-   console.log(savedProduct);
-
+   const cart = useLoaderData();
+   console.log(cart);
    return (
       <div className="container order-cols">
          <div className="">
-            <p>List</p>
+            <p>List: {cart.length}</p>
          </div>
          <div className="">
             <h2>Order Summary</h2>
-            <Cart cart={[]}></Cart>
+            <Cart cart={cart}></Cart>
          </div>
       </div>
    );
