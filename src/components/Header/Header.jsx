@@ -9,10 +9,10 @@ const Header = () => {
                <img src="/src/assets/images/Logo.svg" alt="" />
             </div>
             <div className="header__menu">
-               <Link to="/home">Home</Link>
                <Link to="/shop">Shop</Link>
-               <Link to="/inventory">Inventory Management</Link>
-               <Link to="/contact">Contact Us</Link>
+               <Link to="/orders">Orders</Link>
+               <Link to="/inventory">Inventory</Link>
+               <Link to="/login">Log in</Link>
             </div>
          </nav>
       </div>
