@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { getShoppingCartFromDb } from "../../utilities/fake";
+import { getShoppingCartFromDb, removeItemFromDb } from "../../utilities/fake";
 import Cart from "../Cart/Cart";
 import "./Order.css";
 import { useLoaderData } from "react-router-dom";
@@ -10,6 +10,7 @@ const Orders = () => {
    console.log(cart);
 
    const removeItemHandler = (id) => {
+      removeItemFromDb(id);
       console.log(id);
    };
 
