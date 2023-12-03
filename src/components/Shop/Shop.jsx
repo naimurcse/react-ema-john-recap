@@ -20,8 +20,8 @@ const Shop = () => {
       const savedCart = [];
 
       for (const id in storedCart) {
-         console.log(id);
-         console.log(storedCart[id]);
+         //  console.log(id);
+         //  console.log(storedCart[id]);
          let addedProduct = products.find((pd) => pd.id === id);
          if (addedProduct) {
             let quantity = storedCart[id];
@@ -52,6 +52,11 @@ const Shop = () => {
       addToDb(product.id);
    };
 
+   const deleteShoppingCartHandler = () => {
+      setCart([]);
+      //   console.log("Hello From Shop");
+   };
+
    return (
       <div>
          <section className="shop">
@@ -65,7 +70,7 @@ const Shop = () => {
                ))}
             </div>
             <div className="shop__order-summary">
-               <Cart cart={cart}>
+               <Cart cart={cart} deleteShoppingCartHandler={deleteShoppingCartHandler}>
                   <Link to="/orders">
                      <button>Review Order</button>
                   </Link>

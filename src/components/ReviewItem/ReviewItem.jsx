@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 
 const ReviewItem = ({ product, removeItemHandler }) => {
-   console.log(product);
+   // console.log(product);
 
    const { id, img, name, price, quantity } = product;
 

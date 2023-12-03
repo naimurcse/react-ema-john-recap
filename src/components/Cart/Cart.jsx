@@ -1,8 +1,10 @@
 import PropTypes from "prop-types";
 import "./Cart.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-const Cart = (props, { children }) => {
+import { faArrowRight, faTrashCan } from "@fortawesome/free-solid-svg-icons";
+const Cart = (props) => {
+   console.log(props);
+   const deleteShoppingCartHandler = props.deleteShoppingCartHandler;
    let totalQuantity = 0;
    let totalPrice = 0;
    let totalShipping = 0;
@@ -27,11 +29,10 @@ const Cart = (props, { children }) => {
          <h5 className="shop__grand-total">Grand Total: ${grandTotal.toFixed(2)} </h5>
 
          <div className="btn-section">
-            <button className="btn btn-danger btn-flex">
+            <button className="btn btn-danger btn-flex" onClick={deleteShoppingCartHandler}>
                <span>Clear Cart</span>
-               <FontAwesomeIcon icon={faArrowRight} />
+               <FontAwesomeIcon icon={faTrashCan} />
             </button>
-            {children}
          </div>
       </div>
    );
@@ -39,6 +40,7 @@ const Cart = (props, { children }) => {
 
 Cart.propTypes = {
    cart: PropTypes.array.isRequired, // adjust the prop type based on your actual requirements
+   deleteShoppingCartHandler: PropTypes.func.isRequired, // adjust the prop type based on your actual requirements
 };
 
 export default Cart;

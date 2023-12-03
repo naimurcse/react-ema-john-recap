@@ -13,8 +13,13 @@ const Orders = () => {
    const removeItemHandler = (id) => {
       let remainProducts = cart.filter((product) => product.id !== id);
       setCart(remainProducts);
-      console.log(remainProducts);
+      // console.log(remainProducts);
       removeItemFromDb(id);
+   };
+
+   const deleteShoppingCartHandler = () => {
+      setCart([]);
+      // console.log("Hello From Orders");
    };
 
    return (
@@ -31,7 +36,7 @@ const Orders = () => {
          </div>
          <div>
             <div className="order-cart">
-               <Cart cart={cart}>
+               <Cart cart={cart} deleteShoppingCartHandler={deleteShoppingCartHandler}>
                   <Link to="/checkout">
                      <button>Proceed Checkout</button>
                   </Link>
