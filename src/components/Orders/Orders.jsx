@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { getShoppingCartFromDb, removeItemFromDb } from "../../utilities/fake";
+import { deleteShoppingCart, getShoppingCartFromDb, removeItemFromDb } from "../../utilities/fake";
 import Cart from "../Cart/Cart";
 import "./Order.css";
 import { Link, useLoaderData } from "react-router-dom";
@@ -19,6 +19,7 @@ const Orders = () => {
 
    const deleteShoppingCartHandler = () => {
       setCart([]);
+      deleteShoppingCart();
       // console.log("Hello From Orders");
    };
 

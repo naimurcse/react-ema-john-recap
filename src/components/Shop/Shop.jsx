@@ -3,7 +3,7 @@ import Cart from "../Cart/Cart";
 import "./Shop.css";
 import { useDeferredValue, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { addToDb, getShoppingCartFromDb } from "../../utilities/fake";
+import { addToDb, deleteShoppingCart, getShoppingCartFromDb } from "../../utilities/fake";
 
 const Shop = () => {
    const [products, setProducts] = useState([]);
@@ -54,6 +54,7 @@ const Shop = () => {
 
    const deleteShoppingCartHandler = () => {
       setCart([]);
+      deleteShoppingCart();
       //   console.log("Hello From Shop");
    };
 
