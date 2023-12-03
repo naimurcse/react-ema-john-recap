@@ -2,7 +2,7 @@ import { useState } from "react";
 import { getShoppingCartFromDb, removeItemFromDb } from "../../utilities/fake";
 import Cart from "../Cart/Cart";
 import "./Order.css";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import ReviewItem from "../ReviewItem/ReviewItem";
 
 const Orders = () => {
@@ -31,7 +31,11 @@ const Orders = () => {
          </div>
          <div>
             <div className="order-cart">
-               <Cart cart={cart}></Cart>
+               <Cart cart={cart}>
+                  <Link to="/checkout">
+                     <button>Proceed Checkout</button>
+                  </Link>
+               </Cart>
             </div>
          </div>
       </div>

@@ -30,3 +30,21 @@
    grid-template-columns: repeat(3, 1fr);
    gap: 2.5rem;
 }
+
+.btn {
+   border: none;
+   border-radius: 0.8rem;
+   padding: 1.3rem;
+   min-width: 100%;
+   font-size: 2rem;
+   cursor: pointer;
+}
+
+.btn-flex {
+   display: flex;
+   justify-content: space-between;
+}
+.btn-danger {
+   background-color: var(--color-red);
+   color: var(--color-white);
+}
