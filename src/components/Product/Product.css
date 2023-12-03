@@ -30,7 +30,7 @@
    bottom: 0;
    left: 0;
 
-   background-color: var(--color-btn-add-to-cart);
+   background-color: var(--color-warning);
 
    /* border-radius: 0.8rem; */
    border-bottom-left-radius: 0.8rem;
@@ -42,7 +42,7 @@
 }
 
 .btn-add-to-cart:hover {
-   background-color: var(--color-btn-add-to-cart-hover);
+   background-color: var(--color-warning-hover);
 }
 
 .product__title {

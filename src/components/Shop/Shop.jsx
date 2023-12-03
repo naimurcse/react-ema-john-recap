@@ -76,7 +76,7 @@ const Shop = () => {
             </div>
             <div className="shop__order-summary">
                <Cart cart={cart} deleteShoppingCartHandler={deleteShoppingCartHandler}>
-                  <button className="btn btn-flex" onClick={() => navigate("/orders")}>
+                  <button className="btn btn-flex btn-warning" onClick={() => navigate("/orders")}>
                      <span>Review Order</span>
                      <FontAwesomeIcon icon={faArrowRight} />
                   </button>

@@ -6,3 +6,7 @@
 .btn-section {
    margin-top: 5rem;
 }
+
+.btn-section > button {
+   margin-bottom: 1.5rem;
+}

@@ -51,5 +51,12 @@
 }
 .btn-danger:hover {
    background-color: var(--color-red-hover);
+}
+
+.btn-warning {
+   background-color: var(--color-warning);
    color: var(--color-white);
+}
+.btn-warning:hover {
+   background-color: var(--color-warning-hover);
 }
