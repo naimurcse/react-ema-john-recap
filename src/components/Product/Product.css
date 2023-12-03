@@ -18,15 +18,14 @@
 .product__body {
    padding: 1.4rem;
 }
-.btn {
+
+.btn-add-to-cart {
    color: var(--color-primary);
    font-size: 1.8rem;
    border: none;
    transition: all 0.3s;
    cursor: pointer;
-}
 
-.btn-add-to-cart {
    position: absolute;
    bottom: 0;
    left: 0;

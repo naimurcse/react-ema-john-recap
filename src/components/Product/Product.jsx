@@ -1,38 +1,38 @@
-
 // import PropTypes from 'prop-types';
 import "./Product.css";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
-import PropTypes from 'prop-types';
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import PropTypes from "prop-types";
 
 const Product = (props) => {
-    // console.log(props.product);
-    const { img, name, price, seller, ratings } = props.product;
-    
-    const handleAddToCart = props.handleAddToCart;
+   // console.log(props.product);
+   const { img, name, price, seller, ratings } = props.product;
 
-    return (
-        <div className='product'>
-            <div className="product__image">
-                <img src={img} alt="" />
-            </div>
+   const handleAddToCart = props.handleAddToCart;
 
-            <div className="product__body">
-                <h3 className="product__title">{name}</h3>
-                <p className='product__price'>Price: {[price]}</p>
-                <p>Manufacturer: {seller}</p>
-                <p>Rating: {ratings}</p>
-            </div>
+   return (
+      <div className="product">
+         <div className="product__image">
+            <img src={img} alt="" />
+         </div>
 
-            <button className="btn btn-add-to-cart" onClick={()=>handleAddToCart(props.product)}>Add to Cart <FontAwesomeIcon icon={faCartShopping} /> </button>
-        </div>
-    );
+         <div className="product__body">
+            <h3 className="product__title">{name}</h3>
+            <p className="product__price">Price: {[price]}</p>
+            <p>Manufacturer: {seller}</p>
+            <p>Rating: {ratings}</p>
+         </div>
+
+         <button className="btn-add-to-cart" onClick={() => handleAddToCart(props.product)}>
+            Add to Cart <FontAwesomeIcon icon={faCartShopping} />{" "}
+         </button>
+      </div>
+   );
 };
 
 Product.propTypes = {
-  product: PropTypes.object.isRequired, // adjust the prop type based on your actual requirements
-  handleAddToCart: PropTypes.func.isRequired, // adjust the prop type based on your actual requirements
+   product: PropTypes.object.isRequired, // adjust the prop type based on your actual requirements
+   handleAddToCart: PropTypes.func.isRequired, // adjust the prop type based on your actual requirements
 };
 
 export default Product;

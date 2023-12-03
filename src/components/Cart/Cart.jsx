@@ -34,7 +34,7 @@ const Cart = (props) => {
                <span>Clear Cart</span>
                <FontAwesomeIcon icon={faTrashCan} />
             </button>
-            <button>{children}</button>
+            {children}
          </div>
       </div>
    );

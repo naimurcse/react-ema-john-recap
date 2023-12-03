@@ -4,6 +4,9 @@ import "./Shop.css";
 import { useDeferredValue, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { addToDb, deleteShoppingCart, getShoppingCartFromDb } from "../../utilities/fake";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
 
 const Shop = () => {
    const [products, setProducts] = useState([]);
@@ -58,6 +61,7 @@ const Shop = () => {
       //   console.log("Hello From Shop");
    };
 
+   const navigate = useNavigate();
    return (
       <div>
          <section className="shop">
@@ -72,11 +76,11 @@ const Shop = () => {
             </div>
             <div className="shop__order-summary">
                <Cart cart={cart} deleteShoppingCartHandler={deleteShoppingCartHandler}>
-                  <div>Review Order</div>
+                  <button className="btn btn-flex" onClick={() => navigate("/orders")}>
+                     <span>Review Order</span>
+                     <FontAwesomeIcon icon={faArrowRight} />
+                  </button>
                </Cart>
-               {
-                  // console.log(cart, cart.length)
-               }
             </div>
          </section>
       </div>
