@@ -72,9 +72,7 @@ const Shop = () => {
             </div>
             <div className="shop__order-summary">
                <Cart cart={cart} deleteShoppingCartHandler={deleteShoppingCartHandler}>
-                  <Link to="/orders">
-                     <button>Review Order</button>
-                  </Link>
+                  <div>Review Order</div>
                </Cart>
                {
                   // console.log(cart, cart.length)

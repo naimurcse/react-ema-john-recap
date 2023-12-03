@@ -5,6 +5,7 @@ import { faArrowRight, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 const Cart = (props) => {
    console.log(props);
    const deleteShoppingCartHandler = props.deleteShoppingCartHandler;
+   const children = props.children;
    let totalQuantity = 0;
    let totalPrice = 0;
    let totalShipping = 0;
@@ -33,6 +34,7 @@ const Cart = (props) => {
                <span>Clear Cart</span>
                <FontAwesomeIcon icon={faTrashCan} />
             </button>
+            <button>{children}</button>
          </div>
       </div>
    );
